@@ -44,4 +44,8 @@ jobs:
         run: php artisan key:generate
 
       - name: Execute tests
+<<<<<<< HEAD
         run: vendor/bin/phpunit
+=======
+        run: php artisan test
+>>>>>>> c42e048847cd2b43d019cd05c70ad510f05289d3
