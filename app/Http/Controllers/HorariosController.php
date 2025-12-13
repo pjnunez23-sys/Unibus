@@ -17,15 +17,13 @@ class HorariosController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'camion_id' => 'required|exists:camiones,id',
-            'hora_salida' => 'required|date_format:H:i',
-            'hora_llegada' => 'required|date_format:H:i',
-            'dias' => 'required|string'
-        ]);
+        'camion_id' => 'required|exists:camiones,id',
+        'hora_salida' => 'required',
+        'hora_llegada' => 'required',
+        'dias' => 'required|string'
+    ]);
 
-        $horario = Horarios::create($validated);
-
-        return response()->json($horario, 201);
+    return Horarios::create($validated);
     }
 
     // GET por ID
